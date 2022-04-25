@@ -1,2 +1,3 @@
-# Mapbox Scroll Essay
-Basic template code for a scrolling essay. Use this as the basis for your visual essay in Mapbox
+# Fzzu Cartographies - Project 3: A Visual Essay in Mapbox
+Details coming soon.
+
