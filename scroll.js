@@ -12,7 +12,7 @@ map.on('load', () => {
   //Hide all presentation layers
   //This demo uses three specific layers. I want to hide them initially so I can reveal them piece meal.
   map.setLayoutProperty('temporality-count', 'visibility', 'none');
-  map.setLayoutProperty('gendered-path-lines', 'visibility', 'none');
+  map.setLayoutProperty('gendered-lines', 'visibility', 'none');
   
 
   //Hide the legend, slider, and infobox on first load. Obviously delete these lines if you want them visible from the start.
@@ -30,15 +30,15 @@ map.on('load', () => {
 
 map.on('idle', () => {
 
-  var toggleableLayerIds = ['gendered-path-lines',  'temporality-count'];
+  var toggleableLayerIds = ['gendered-lines',  'temporality-count'];
 
   for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
     var visibility = map.getLayoutProperty(id, 'visibility');
 
-    if (id == 'gendered-path-lines' && visibility === 'none') {
+    if (id == 'gendered-lines' && visibility === 'none') {
       document.getElementById('legend').style.display = 'none';
-    } else if (id == 'gendered-path-lines' && visibility === 'visible') {
+    } else if (id == 'gendered-lines' && visibility === 'visible') {
       document.getElementById('legend').style.display = 'initial';
     }
     if (id == 'temporality-count' && visibility === 'none') {
@@ -54,7 +54,7 @@ function createMenu(){
 
     // MENU For selecting layers
     // Read in all the layers you want to toggle
-    var toggleableLayerIds = ['gendered-path-lines', 'temporality-count'];
+    var toggleableLayerIds = ['gendered-lines', 'temporality-count'];
 
     //These are the names for the layers that will appear on the menu
     var layerNames = ['Legend: Gender', 'Slider: Temporality']
@@ -70,7 +70,8 @@ function createMenu(){
       link.id = id;
 
       //create an event handler for each menu item. If clicked check whether the layer is visible, if so set visibility to 'none' and vice versa.
-      link.onclick = function(e) {
+      link.onclick = function(e) 
+      {
         var clickedLayer = this.id;
         e.preventDefault();
         e.stopPropagation();
@@ -100,7 +101,7 @@ function createLegend() {
 
   //LEGEND COLORS
   //Set the corresponding LEGEND colors using HEX the easiest way to do this is by setting your mapcolors in Mapbox using ColorBrewer (colorbrewer2.org). Then copy the exact same hex value to the array below. Remember that each label above should correspond to a color. If the number of items in layers does not match the number of values in colors you will get an error.
-  var colors = ['#2b125e', '#959fd0'];
+  var colors = ['#34c53c', '#2b1ba1'];
 
 //run through each element in the legend array and create a new legend item.
   for (i = 0; i < layers.length; i++) {

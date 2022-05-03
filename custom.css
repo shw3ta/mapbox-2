@@ -95,8 +95,8 @@ width: 100%;
 }
 */
 #console {
-  position: absolute;
-  width: 280px;
+  position: fixed;
+  width: 300px;
   margin: 10px;
   padding: 10px 20px;
   background-color: white;
@@ -104,7 +104,8 @@ width: 100%;
 }
 
 #slider {
-  width: 200px
+  width: 200px;
+  position: relative;
 }
 
 #legend {
@@ -112,7 +113,7 @@ width: 100%;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   line-height: 18px;
   height: auto;
-  margin-bottom: 40px;
+  margin-top: 40px;
   width: 100px;
   font: 18px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
@@ -126,17 +127,6 @@ width: 100%;
   font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
-#infobox {
-  top: 0;
-  height: fit-content;
-  box-shadow:0 2px 3px rgba(0, 0, 0, 0.20);
-  border-radius: 5px;
-  min-height: 100px;
-  padding: 10px;
-  margin-top: 5px;
-  margin-left: 5px;
-  width: 250px;
-}
 
 #menu {
     background: #fff;
