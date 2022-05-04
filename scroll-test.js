@@ -13,9 +13,10 @@ pitch: 0
 map.on('load', () => 
 {
   // I want to show the slider, legend from the start
-  map.setLayoutProperty('gendered-lines-female','visibility', 'visible');
-  map.setLayoutProperty('gendered-lines-male', 'visibility', 'visible');
+  map.setLayoutProperty('lines-female','visibility', 'visible');
+  map.setLayoutProperty('lines-male', 'visibility', 'visible');
 
+  // don't show the console and slider unless the page is scrolled to part_3
   document.getElementById('console').style.display = 'none';
 
 
@@ -29,34 +30,31 @@ map.on('load', () =>
 
   // show menu buttons
   Menu()
-
-  ////////////////////////////////////////////////
-  // Slider for temporality
   
 }
 );
 
-map.on('idle', () => {
+// map.on('idle', () => {
 
-  var toggleableLayerIds = ['gendered-lines-female',  'gendered-lines-male'];
+//   var toggleableLayerIds = ['lines-female',  'lines-male'];
 
-  for (var i = 0; i < toggleableLayerIds.length; i++) {
-    var id = toggleableLayerIds[i];
-    var visibility = map.getLayoutProperty(id, 'visibility');
+//   for (var i = 0; i < toggleableLayerIds.length; i++) {
+//     var id = toggleableLayerIds[i];
+//     var visibility = map.getLayoutProperty(id, 'visibility');
 
-    if (id == 'gendered-lines' && visibility === 'none') {
-      document.getElementById('legend').style.display = 'none';
-    } else if (id == 'gendered-lines' && visibility === 'visible') {
-      document.getElementById('legend').style.display = 'initial';
-    }
-    if (id == 'temporality-count' && visibility === 'none') {
-      document.getElementById('console').style.display = 'none';
-    } else if (id == 'temporality-count' && visibility === 'visible') {
-      document.getElementById('console').style.display = 'initial';
-    }
+//     if (id == 'lines-female' && visibility === 'none') {
+//       document.getElementById('legend').style.display = 'none';
+//     } else if (id == 'lines-female' && visibility === 'visible') {
+//       document.getElementById('legend').style.display = 'initial';
+//     }
+//     if (id == 'lines-male' && visibility === 'none') {
+//       document.getElementById('console').style.display = 'none';
+//     } else if (id == 'lines-male' && visibility === 'visible') {
+//       document.getElementById('console').style.display = 'initial';
+//     }
    
-  }
-});
+//   }
+// });
 
 function Legend()
 {
@@ -82,8 +80,8 @@ function Legend()
 
 function Menu()
 {
-  var keys = ['gendered-lines-female', 'gendered-lines-male'];
-  var buttonLabels = ['Hide Females', 'Hide Males'];
+  var keys = ['lines-female', 'lines-male'];
+  var buttonLabels = ['Hide Paths of Females', 'Hide Paths of Males'];
   
   for (var i = 0; i < 2; i++)
   {
@@ -105,21 +103,21 @@ function Menu()
       var clickedLayer = this.id;
       e.preventDefault();
       e.stopPropagation();
-      gender = this.textContent.split(" ")[1];
+      gender = this.textContent.split(" ")[3];
 
       var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
       if (visibility == 'visible')
       {
         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
         this.className = '';
-        this.textContent = 'Show '.concat(gender) ;
+        this.textContent = 'Show Paths of '.concat(gender) ;
       }
 
       else
       {
         this.className = 'active';
         map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-        this.textContent = 'Hide '.concat(gender);
+        this.textContent = 'Hide Paths of '.concat(gender);
       }
     };
 
@@ -144,8 +142,15 @@ function Slider()
     for (var i = 0; i < activeLayers.length; i++)
     {
       ID = activeLayers[i];
+      gender = ID.split("-")[1];
+      gender = gender[0].toUpperCase() + gender.substring(1).toLowerCase();
       console.log(ID)
-      map.setFilter(ID, ["==", ['number', ['get', 'temporal_sequence']], step]);
+      console.log(gender)
+
+      const filterTemporality = ['==', ['number', ['get', 'temporal_sequence']], step];
+      const filterGender = ['==', ['string', ['get', 'gender']], gender];
+
+      map.setFilter(ID, ['all', filterGender, filterTemporality]);
       document.getElementById('active-temporality').innerText = labels[step - 1];
     }
   })
@@ -156,19 +161,19 @@ function visibleLayers()
   var visibleLayerIds = []
   var invisibleLayerIds = []
   // case 1: both are visible
-  if (map.getLayoutProperty('gendered-lines-female', 'visibility') == 'visible' && map.getLayoutProperty('gendered-lines-male', 'visibility') == 'visible')
+  if (map.getLayoutProperty('lines-female', 'visibility') == 'visible' && map.getLayoutProperty('lines-male', 'visibility') == 'visible')
   {
-    visibleLayerIds = ['gendered-lines-female', 'gendered-lines-male'];  
+    visibleLayerIds = ['lines-female', 'lines-male'];  
   }
   // case 2: only female layer is visible
-  else if (map.getLayoutProperty('gendered-lines-female', 'visibility') == 'visible')
+  else if (map.getLayoutProperty('lines-female', 'visibility') == 'visible')
   {
-    visibleLayerIds = ['gendered-lines-female'];
+    visibleLayerIds = ['lines-female'];
   }
   // case 3: only male layer is visible
   else
   {
-    visibleLayerIds = ['gendered-lines-male'];
+    visibleLayerIds = ['lines-male'];
   }
 
   return visibleLayerIds;
