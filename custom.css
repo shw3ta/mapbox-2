@@ -3,20 +3,39 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 
 h1 {
-  font-size: 20px;
+  font-size: 50px;
   line-height: 30px;
+  text-align: right;
+  font-family: "Times New Roman", Times, serif;
+
 }
 
 h2 {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 20px;
   margin-bottom: 10px;
+  text-align: right;
+  font-family: "Times New Roman", Times, serif;
 }
+
+h4
+{
+  text-align: right;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+h5
+{
+  text-align: left;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+
 
 a {
   text-decoration: none;
@@ -28,6 +47,7 @@ p {
   font-weight:normal;
   margin: 10px;
   text-align: left;
+  font-family: "Times New Roman", Times, serif;
 }
 
 
@@ -41,7 +61,7 @@ p {
 #features {
 width: 50%;
 margin-left: 50%;
-font-family: sans-serif;
+font-family: "Times New Roman", Times, serif;
 overflow-y: scroll;
 background-color: #fafafa;
 }
@@ -51,6 +71,7 @@ line-height: 25px;
 border-bottom: 1px solid #ddd;
 opacity: 0.25;
 font-size: 16px;
+font-family: "Times New Roman", Times, serif;
 
 }
 section.active {
@@ -73,7 +94,7 @@ width: 100%;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font: bold 12px/20px "Times New Roman", Times, serif;
 }
 
 .map-overlay {
@@ -82,7 +103,7 @@ width: 100%;
   right: 0;
   background: rgba(255, 255, 255, 0.75);
   margin: 10px;
-  font: bold 16px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: bold 16px/20px "Times New Roman", Times, serif;
   overflow: auto;
   border-radius: 3px;
 }
@@ -115,7 +136,7 @@ width: 100%;
   height: auto;
   margin-top: 40px;
   width: 100px;
-  font: 18px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: 18px/24px "Times New Roman", Times, serif;
 }
 
 .legend-key {
@@ -124,7 +145,7 @@ width: 100%;
   width: 10px;
   height: 10px;
   margin-right: 5px;
-  font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: bold 12px/20px "Times New Roman", Times, serif;
 }
 
 
@@ -137,7 +158,7 @@ width: 100%;
     border-radius: 5px;
     width: 15%;
     border: 1px solid rgba(0,0,0,0.4);
-    font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font: bold 12px/20px "Times New Roman", Times, serif;
 }
 
 #menu a {
@@ -147,7 +168,7 @@ width: 100%;
     padding: 10px;
     text-decoration: none;
     border-bottom: 1px solid rgba(0,0,0,0.25);
-    font:bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font:bold 12px/20px "Times New Roman", Times, serif;
     text-align: center;
 }
 
