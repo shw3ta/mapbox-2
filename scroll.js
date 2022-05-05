@@ -222,24 +222,37 @@ pitch: 0
 // pitch: 50
 },
 'part_4': {
-bearing: 45,
-center: [74.8736788, 31.6343083],
-zoom: 14,
-pitch: 65,
-speed: .5
+bearing:0,
+center: [77.0688997, 28.5272803],
+zoom: 3,
+pitch: 0
+// bearing: 45,
+// center: [74.8736788, 31.6343083],
+// zoom: 14,
+// pitch: 65,
+// speed: .5
 },
 'part_5': {
-bearing: 180,
-center: [77.1835, 28.6239],
-zoom: 11,
-pitch: 10,
-speed: 1,
-curve:1
+
+bearing:0,
+center: [77.0688997, 28.5272803],
+zoom: 3,
+pitch: 0
+// bearing: 180,
+// center: [77.1835, 28.6239],
+// zoom: 11,
+// pitch: 10,
+// speed: 1,
+// curve:1
 },
 'part_6': {
-bearing: 25,
+bearing:0,
 center: [77.0688997, 28.5272803],
-zoom: 7
+zoom: 3,
+pitch: 0
+// bearing: 25,
+// center: [77.0688997, 28.5272803],
+// zoom: 7
 }
 };
 
