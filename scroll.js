@@ -198,15 +198,15 @@ function isElementOnScreen(id)
 const chapters = {
 'part_1': {
 bearing:0,
-center: [77.0688997, 28.5272803],
+center: [75.0688997, 28.5272803],
 zoom: 3,
 pitch: 0
 },
 'part_2': {
 duration: 7000,
-center: [74.3141829, 31.5656822],
+center: [74.8723, 31.6340],
 bearing: 0,
-zoom: 10,
+zoom: 8,
 pitch: 0
 },
 'part_3': {
@@ -244,16 +244,17 @@ pitch: 0
 // pitch: 10,
 // speed: 1,
 // curve:1
-},
-'part_6': {
-bearing:0,
-center: [77.0688997, 28.5272803],
-zoom: 3,
-pitch: 0
-// bearing: 25,
-// center: [77.0688997, 28.5272803],
-// zoom: 7
 }
+//, 
+// 'part_6': {
+// bearing:0,
+// center: [77.0688997, 28.5272803],
+// zoom: 3,
+// pitch: 0
+// // bearing: 25,
+// // center: [77.0688997, 28.5272803],
+// // zoom: 7
+// }
 };
 
 
