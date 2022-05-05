@@ -222,15 +222,13 @@ pitch: 0
 // pitch: 50
 },
 'part_4': {
-bearing:0,
-center: [77.0688997, 28.5272803],
-zoom: 3,
-pitch: 0
-// bearing: 45,
-// center: [74.8736788, 31.6343083],
-// zoom: 14,
-// pitch: 65,
-// speed: .5
+
+bearing: 45,
+center: [0.6004, 52.2891],
+zoom: 6,
+pitch: 50,
+speed: .2
+
 },
 'part_5': {
 
